@@ -27,9 +27,9 @@ public class LoginSessionServlet extends HttpServlet {
             String s1="select * from login where name='"+name+"'and pass='"+pass+"'";
             ResultSet rs=s.executeQuery(s1);
             if(rs.next()){
-//                HttpSession se=req.getSession();
-//                se.setAttribute("name",name);
-//                se.setAttribute("pass",pass);
+                HttpSession se=req.getSession();
+                se.setAttribute("name",name);
+                se.setAttribute("pass",pass);
 //
                 res.sendRedirect("BlogPage.html");
 
